@@ -1,4 +1,4 @@
-export class Peliculas {
+export class Pelicula {
   private _nombre: string;
   private _epoca: number;
   private _duracion: number;
@@ -19,24 +19,6 @@ export class Peliculas {
     this._precioTicket = precioTicket;
   }
 
-  public static crearArray = (peliculaJson: any): Peliculas[] => {
-    const peliculaArray = [];
-    peliculaJson.forEach((element: any) => {
-      peliculaArray.push(this.parsearArray(element));
-    });
-    return peliculaArray;
-  };
-
-  public static parsearArray = (peliculaJson: any) => {
-    return new this(
-      peliculaJson["nombre"],
-      peliculaJson["epoca"],
-      peliculaJson["duracion"],
-      peliculaJson["genero"],
-      peliculaJson["precioTicket"]
-    );
-  };
-
   public mostrarInformacion = (): void => {
     console.log(`Pelicula: ${this._nombre}`);
     console.log(`epoca: ${this._epoca}`);
@@ -49,6 +31,7 @@ export class Peliculas {
   public get duracion(): number {
     return this._duracion;
   }
+
   public get genero(): string {
     return this._genero;
   }

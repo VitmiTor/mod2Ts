@@ -1,14 +1,12 @@
-import { Videojuegos } from "../clases/Videojuegos";
-import {
-  ordenarAlfabeticamente,
-  ordenarEmpresaArray,
-} from "../utilities/Parsear";
-import videojuegosJson from "../jsons/ex2/videojuegos.json";
+import videojuegosJson from "./jsons/videojuegos.json";
+import { crearArrayVideojuego } from "./parser/videojuegosParser";
+import { ordenarAlfabeticamente, ordenarEmpresaArray } from "./functions";
+import { Videojuego } from "./clases/Videojuego";
 
-const videojuegosArray = Videojuegos.crearArray(videojuegosJson);
-const nintendoArray = [];
-const xboxArray = [];
-const playStationArray = [];
+const videojuegosArray = crearArrayVideojuego(videojuegosJson);
+const nintendoArray: Videojuego[] = [];
+const xboxArray: Videojuego[] = [];
+const playStationArray: Videojuego[] = [];
 
 ordenarEmpresaArray(
   videojuegosArray,
